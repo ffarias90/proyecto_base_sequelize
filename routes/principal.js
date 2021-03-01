@@ -1,6 +1,5 @@
 const { Router } = require('express');
-const { Quote } = require('./db');
-
+const { Quote } = require('../models/db');
 const router = Router();
 
 

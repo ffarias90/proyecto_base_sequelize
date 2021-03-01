@@ -33,5 +33,5 @@ sql.sync()
 
 // finalmente acá listamos todos los modelos que queremos exportar
 module.exports = {
-    nombreDB,
+
 };
