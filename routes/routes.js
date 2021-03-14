@@ -17,6 +17,7 @@ function checkLogin(req, res, next) {
     next();
 }
 
+//middleware para validar admin
 function checkAdmin(req, res, next) {
 
     if (req.session.user.rol != "ADMIN") {
@@ -46,12 +47,21 @@ router.get("/admin", [checkLogin, checkAdmin], (req, res) => {
     const errors = req.flash("errors");
     const mensajes = req.flash("mensajes");
 
-    res.render("adminpro.ejs", { errors, mensajes })
+    res.render("admin.ejs", { errors, mensajes })
 });
 
+//rutas socket
+router.get('/socket', async(req, res) => {
+    res.render('socket.ejs');
+});
 
+router.get('/saludo', async(req, res) => {
+    res.send('Hi everyone');
+});
 
-
+router.get('/adios', async(req, res) => {
+    res.send('Arrivederci');
+});
 
 
 
